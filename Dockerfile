@@ -39,8 +39,8 @@ RUN groupadd --gid ${GID} ${USER} \
   && useradd --uid ${UID} --gid ${GID} --home-dir /directus/ --shell /bin/bash ${USER} \
   && chown -R ${USER}:${USER} /directus/
 
-COPY --link --from=builder --chown=${USER}:${USER} /directus/dist /directus/
-COPY --link --from=builder --chown=${USER}:${USER} /usr/bin/tini /usr/bin/tini
+COPY --link --from=builder --chown=${UID}:${GID} /directus/dist /directus/
+COPY --link --from=builder --chown=${UID}:${GID} /usr/bin/tini /usr/bin/tini
 
 USER directus
 
