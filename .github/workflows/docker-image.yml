@@ -30,8 +30,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            navystack/nodebb
-            ghcr.io/${{ env.REPO_OWNER_LOWERCASE }}/nodebb-docker
+            navystack/directus
+            ghcr.io/${{ env.REPO_OWNER_LOWERCASE }}/directus-docker
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}

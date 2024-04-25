@@ -17,7 +17,7 @@ RUN \
     && cd dist \
     && find . -mindepth 1 -maxdepth 1 -name '.*' ! -name '.' ! -name '..' -exec bash -c 'echo "Deleting {}"; rm -rf {}' \; \
     && mkdir -p database extensions uploads \
-    { \
+    && { \
         echo 'const f = "package.json", {name, version, type, exports, bin} = require(`./${f}`), {packageManager} = require(`../${f}`);'; \
         echo 'fs.writeFileSync(f, JSON.stringify({name, version, type, exports, bin, packageManager}, null, 2));'; \
     } | node -e "$(cat)" 
