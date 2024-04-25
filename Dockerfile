@@ -42,7 +42,7 @@ RUN groupadd --gid ${GID} ${USER} \
 COPY --link --from=builder --chown=${UID}:${GID} /directus/dist /directus/
 COPY --link --from=builder --chown=${UID}:${GID} /usr/bin/tini /usr/bin/tini
 
-USER directus
+USER ${USER}
 
 EXPOSE 8055
 
