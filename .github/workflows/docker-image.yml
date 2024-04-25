@@ -70,7 +70,7 @@ jobs:
           username: ${{ env.REPO_OWNER_LOWERCASE }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push ( NodeBB )
+      - name: Build and push ( Directus )
         uses: docker/build-push-action@v5
         with:
           file: Dockerfile
