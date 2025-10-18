@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 
-FROM node:20-bookworm AS builder
+FROM node:25-bookworm AS builder
 
 WORKDIR /directus
 
@@ -22,7 +22,7 @@ RUN \
         echo 'fs.writeFileSync(f, JSON.stringify({name, version, type, exports, bin, packageManager}, null, 2));'; \
     } | node -e "$(cat)" 
 
-FROM node:20-bookworm-slim AS runtime
+FROM node:25-bookworm-slim AS runtime
 
 ENV \
     USER=directus \
