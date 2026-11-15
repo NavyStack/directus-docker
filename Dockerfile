@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.4
+# syntax=docker/dockerfile:1.29
 
 FROM node:20-bookworm AS builder
 
